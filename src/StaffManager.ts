@@ -1,18 +1,23 @@
 import Staff from "./Staff";
 
 class StaffManager {
-    private listStaff: Staff[] = [];
+    private static listStaff: Staff[] = [];
 
-    addStaff(staff: Staff): void {
-        this.listStaff.push(staff);
+    static addStaff(staff: Staff): void {
+        StaffManager.listStaff.push(staff);
     }
 
-    showList(): void {
-        console.table(this.listStaff)
+    static showList(): void {
+        console.table(StaffManager.listStaff)
     }
 
+    static deleteStaff(index: number): void {
+        StaffManager.listStaff.splice(index, 1);
+    }
 
-
+    static findStaff(email: string): Staff[] {
+        return StaffManager.listStaff.filter(item => item.email === email);
+    }
 }
 
 export default StaffManager;

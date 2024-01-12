@@ -2,11 +2,11 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var StaffManager_1 = require("./src/StaffManager");
 var Staff_1 = require("./src/Staff");
-var staffManager = new StaffManager_1.default();
 var staff1 = new Staff_1.default("Men", 30, "men@gmail.com");
-var staff2 = new Staff_1.default("Manh", 24, "men@gmail.com");
-var staff3 = new Staff_1.default("Hung", 28, "men@gmail.com");
-staffManager.addStaff(staff1);
-staffManager.addStaff(staff2);
-staffManager.addStaff(staff3);
-staffManager.showList();
+var staff2 = new Staff_1.default("Manh", 24, "manh@gmail.com");
+var staff3 = new Staff_1.default("Hung", 28, "hung@gmail.com");
+StaffManager_1.default.addStaff(staff1);
+StaffManager_1.default.addStaff(staff2);
+StaffManager_1.default.addStaff(staff3);
+var result = StaffManager_1.default.findStaff("hung@gmail.com");
+console.table(result);
